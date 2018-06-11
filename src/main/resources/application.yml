@@ -1,7 +1,35 @@
-#eureka.client.register-with-eureka=false
-#eureka.client.fetch-registry=false
-#
-#logging.level.com.netflix.eureka=OFF
-#logging.level.com.netflix.discoverserver:
-
-
+---
+server:
+  port: 7071
+spring:
+  profiles:
+    active: eureka1
+  application:
+    name: eureka-service
+eureka:
+  instance:
+    hostname: eureka-service1
+  client:
+    service-url:
+      defaultZone: http://localhost:7071/eureka/
+    registerWithEureka: true
+    fetchRegistry: false
+  server:
+    enable-self-preservation: true
+---
+spring:
+  profiles: eureka2
+  application:
+    name: eureka-service
+server:
+  port: 7071
+eureka:
+  instance:
+    hostname: eureka-service2
+  client:
+    service-url:
+      defaultZone: http://10.71.172.22:7071/eureka/
+    registerWithEureka: true
+    fetchRegistry: false
+  server:
+    enable-self-preservation: true

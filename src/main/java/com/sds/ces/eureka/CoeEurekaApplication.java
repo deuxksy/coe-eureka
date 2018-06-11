@@ -1,4 +1,4 @@
-package com.example.coeeureka;
+package com.sds.ces.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
