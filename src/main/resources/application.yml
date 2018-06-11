@@ -4,8 +4,6 @@ server:
 spring:
   profiles:
     active: eureka1
-  application:
-    name: eureka-service
 eureka:
   instance:
     hostname: eureka-service1
@@ -19,8 +17,6 @@ eureka:
 ---
 spring:
   profiles: eureka2
-  application:
-    name: eureka-service
 server:
   port: 7071
 eureka:
