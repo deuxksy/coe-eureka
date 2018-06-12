@@ -1,23 +1,15 @@
-spring:
-  profiles:
-    active: dev-eureka
 server:
   port: ${PORT:7071}
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: true
-  server:
-    enable-self-preservation: true
----
-spring:
-  profiles: dev-eureka
 eureka:
   instance:
     hostname: dev-eureka
   client:
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
       defaultZone: ${EUREKA_SERVER_URL:http://10.71.172.22}:${EUREKA_SERVER_PORT:7071}/eureka/
+  server:
+    enable-self-preservation: true
 ---
 spring:
   profiles: stage-eureka1
