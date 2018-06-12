@@ -1,31 +1,29 @@
----
-server:
-  port: 7071
 spring:
   profiles:
     active: eureka1
+server:
+  port: 7071
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+  server:
+    enable-self-preservation: true
+---
+spring:
+  profiles: eureka1
 eureka:
   instance:
     hostname: eureka-service1
   client:
     service-url:
-      defaultZone: http://10.71.174.22:7071/eureka/
-    registerWithEureka: true
-    fetchRegistry: false
-  server:
-    enable-self-preservation: true
+      defaultZone: ${EUREKA_SERVER_URL:http://10.71.174.22}:${EUREKA_SERVER_PORT:7071}/eureka/
 ---
 spring:
   profiles: eureka2
-server:
-  port: 7071
 eureka:
   instance:
     hostname: eureka-service2
   client:
     service-url:
-      defaultZone: http://10.71.172.22:7071/eureka/
-    registerWithEureka: true
-    fetchRegistry: false
-  server:
-    enable-self-preservation: true
+      defaultZone: ${EUREKA_SERVER_URL:http://10.71.172.22}:${EUREKA_SERVER_PORT:7071}/eureka/
