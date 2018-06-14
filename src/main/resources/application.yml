@@ -5,11 +5,11 @@ eureka:
     hostname: eureka-server
   client:
     register-with-eureka: false
-    fetchRegistry: true
+    fetch-registry: false
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://10.71.172.22}:${EUREKA_SERVER_PORT:7071}/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://10.71.171.22}:${EUREKA_SERVER_PORT:7071}/eureka/
   server:
-    enable-self-preservation: true
+    enable-self-preservation: false
 ---
 spring:
   profiles: stage-eureka1
@@ -21,6 +21,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: ${EUREKA_SERVER_URL:http://10.71.174.22}:${EUREKA_SERVER_PORT:7071}/eureka/
+  server:
+    enable-self-preservation: true
 ---
 spring:
   profiles: stage-eureka2
@@ -32,3 +34,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: ${EUREKA_SERVER_URL:http://10.71.172.22}:${EUREKA_SERVER_PORT:7071}/eureka/
+  server:
+    enable-self-preservation: true
