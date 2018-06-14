@@ -1,6 +1,6 @@
 # Eureka 
 
-Spring Cloud Netflix Eureka 예제 코드
+Spring Cloud Netflix Eureka on chatbot ecosystem
 
 ## 시스템 요구사항
 
