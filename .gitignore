@@ -130,3 +130,6 @@ gradle-app.setting
 
 
 # End of https://www.gitignore.io/api/java,macos,maven,gradle,intellij+all
+
+gradlew
+gradlew.bat
