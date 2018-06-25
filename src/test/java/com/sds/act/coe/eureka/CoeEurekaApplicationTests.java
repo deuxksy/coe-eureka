@@ -1,4 +1,4 @@
-package com.sds.ces.eureka;
+package com.sds.act.coe.eureka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

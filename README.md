@@ -18,3 +18,11 @@ Spring Cloud Netflix Eureka on chatbot ecosystem
 
 ![](./document/images/service-registry.png)
 - other services for discovery
+
+
+## Environment Variable
+| Value      	| Description         	|
+|-----------	|--------------	|
+| PORT  	|  Server Port( default port: 7070)         	|
+| EUREKA_SERVER_URL  	|  Eureka Server URI (ex>http://localhost)         	|
+| EUREKA_SERVER_PORT  	|  Eureka Server PORT (default port: 7070)   	|
