@@ -43,9 +43,9 @@ eureka:
   instance:
     hostname: stage-eureka
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://eureka-service:7070/eureka/
+      defaultZone: http://eureka-server:7070/eureka/
   server:
     enable-self-preservation: true
