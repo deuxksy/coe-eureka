@@ -1,28 +1,34 @@
-# Eureka 
+# Eureka
+> Spring Cloud Netflix Eureka 샘플 프로젝트
 
-Spring Cloud Netflix Eureka on chatbot ecosystem
+서비스 인스턴스 목록과 그 위치(host, port)가 동적으로 변하는 환경에서 사용자가 그 위치를 모두 관리하기는 어렵다.
+Eureka를 사용하면 등록된 모든 서비스의 정보를 registry로 관리하고, 이에 대한 접근 정보를 요청하는 서비스에게 목록을 제공한다.
 
-## 시스템 요구사항
+## Getting started
 
-| Type      	| Tool         	| Version      	|
-|-----------	|--------------	|--------------	|
-| Compiler  	| Java         	| 1.8 이상     	|
-| Builder   	| maven        	| 3.2 이상     	|
-| Framework 	| Spring Boot  	| 2.0          	|
-|           	| Spring Cloud 	| Finchley.RC2 	|
+- System Requirements
 
-참고 : [Spring Cloud Dependency](http://projects.spring.io/spring-cloud/)
+    | Type      	| Tool         	| Version      	|
+    |-----------	|--------------	|--------------	|
+    | Compiler  	| JDK         	| 1.8 이상     	|
+    | Builder   	| maven        	| 3.2 이상     	|
+    | Framework 	| Spring Boot  	| 2.0.2       	|
+    |           	| Spring Cloud 	| Finchley.RELEASE 	|
 
+- Initial Configuration
 
-## 구성도
+    | Value      	| Description         	|
+    |-----------	|--------------	|
+    | PORT  	|  Server Port( default port: 7070)         	|
+    | EUREKA_SERVER_URL  	|  Eureka Server URI (ex>http://localhost)         	|
+    | EUREKA_SERVER_PORT  	|  Eureka Server PORT (default port: 7070)   	|
 
-![](./document/images/service-registry.png)
-- other services for discovery
+- Screenshot
 
+    ![](./document/images/service-registry.png)
 
-## Environment Variable
-| Value      	| Description         	|
-|-----------	|--------------	|
-| PORT  	|  Server Port( default port: 7070)         	|
-| EUREKA_SERVER_URL  	|  Eureka Server URI (ex>http://localhost)         	|
-| EUREKA_SERVER_PORT  	|  Eureka Server PORT (default port: 7070)   	|
+## Related Links
+
+- [MSA CoE Guide](https://coe.gitbook.io/guide/service-discovery/eureka)
+
+- [Official site](https://spring.io/guides/gs/service-registration-and-discovery/)
