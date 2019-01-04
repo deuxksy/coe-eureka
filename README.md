@@ -1,5 +1,5 @@
 # Eureka
-> Spring Cloud Netflix Eureka 샘플 프로젝트
+> Spring Cloud Netflix Eureka 샘플 프로젝트.
 
 서비스 인스턴스 목록과 그 위치(host, port)가 동적으로 변하는 환경에서 사용자가 그 위치를 모두 관리하기는 어렵다.
 Eureka를 사용하면 등록된 모든 서비스의 정보를 registry로 관리하고, 이에 대한 접근 정보를 요청하는 서비스에게 목록을 제공한다.
@@ -25,7 +25,7 @@ Eureka를 사용하면 등록된 모든 서비스의 정보를 registry로 관�
 
 - Screenshot
 
-    ![](./document/images/service-registry.png)
+    ![](https://github.com/SDSACT/coe-eureka/raw/master/document/images/service-registry.png)
 
 ## Related Links
 
