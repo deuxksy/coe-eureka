@@ -1,7 +1,7 @@
 pipeline {
   agent {
       docker {
-//          image 'portus.sds-act.com/coe-sample/eureka-sample'
+          image 'portus.sds-act.com/coe-sample/eureka-sample'
           registryUrl 'https://portus.sds-act.com'
           registryCredentialsId 'dockeruser'
       }
