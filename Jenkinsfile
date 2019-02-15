@@ -1,49 +1,29 @@
 pipeline {
-  agent any
+  agent {
+      docker {
+          image 'portus.sds-act.com/coe-sample/eureka-sample'
+          registryUrl 'https://portus.sds-act.com'
+          registryCredentialsId 'dockeruser'
+      }
+  }
   
   environment {
     registry = "portus.sds-act.com/coe-sample/eureka-sample"
     dockerImage = ''
     buildnum = ''
   }
-  
-  stages {
-  
-    stage('Cloning Git') {
-      steps {
-        git credentialsId: 'min0418', url: 'https://github.com/SDSACT/coe-eureka.git'
-      }
-    }   
-       
+  environment {
+    SSHUSER = credentials("actadmin")
+    DOCKERUSER = credentials("dockeruser")
+  }
+  stages {    
     stage('Build Project') {
       steps {
-        container('maven') {
-            script{
-                sh "mvn clean install -Dprofile=kube -DskipTests=true"
-            }
+          script{
+              sh "mvn clean install -Dprofile=kube -DskipTests=true"
         }
       }
     }
-    stage('Building image') {
-      steps{
-        container('docker') {
-            script {
-              buildnum = '${BUILD_NUMBER}'
-              dockerImage = docker.build registry + ":" + buildnum
-            }
-        }
-      }
-    }
-    stage('Deploy Image') {
-      steps{
-        container('docker') {        
-            script {
-              docker.withRegistry('https://portus.sds-act.com', 'dockeruser' ) {
-                dockerImage.push()
-              }
-            }
-        }
-      }
-    }
+ 
   }
 }
