@@ -9,7 +9,7 @@ node {
     
     stage('Compile') {
     
-        sh "mvn clean install -Dprofile=kube -DskipTests=true"
+        sh "./mvnw clean install -Dprofile=kube -DskipTests=true"
     }
     
     stage('Build image') {
