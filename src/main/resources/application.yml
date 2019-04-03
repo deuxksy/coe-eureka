@@ -2,12 +2,12 @@ server:
   port: ${PORT:7070}
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL}:${EUREKA_SERVER_PORT:7070}/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost}:${EUREKA_SERVER_PORT:7070}/eureka/
   server:
     enable-self-preservation: true
 ---
@@ -20,7 +20,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL}:${EUREKA_SERVER_PORT:7070}/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost}:${EUREKA_SERVER_PORT:7070}/eureka/
   server:
     enable-self-preservation: true
 ---
@@ -33,7 +33,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL}:${EUREKA_SERVER_PORT:7070}/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost}:${EUREKA_SERVER_PORT:7070}/eureka/
   server:
     enable-self-preservation: true
 ---
